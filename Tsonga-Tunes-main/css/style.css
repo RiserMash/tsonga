@@ -1,0 +1,402 @@
+/* Base Styles (applied to all screen sizes) */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+     /* To ensure music player takes up full height */
+}
+
+.music-player {
+    background-color: rgb(230, 179, 12);
+    width: 100%;
+    flex-grow: 1; /* Allow music player to grow and take up available space */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    margin-bottom: 30px;
+    padding: 0 20px; /* Optional: add some padding to the nav */
+}
+
+nav .circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    color: rgb(25, 4, 63);
+    box-shadow: 0 5px 10px rgba(255, 26, 26, 0.22);
+}
+
+.song-img {
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 10px 60px rgba(255, 26, 26, 0.22);
+}
+
+.music-player h1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(25, 4, 63);
+    margin-top: 20px;
+}
+
+.music-player p {
+    font-size: 14px;
+    color: rgb(25, 4, 63);
+}
+
+#progress {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgb(25, 4, 63);
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 40px 0;
+}
+
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: rgb(25, 4, 63);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls div {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: rgb(25, 4, 63);
+    box-shadow: 0 10px 20px rgba(255, 26, 26, 0.22);
+    cursor: pointer;
+}
+
+.controls div:nth-child(2) {
+    transform: scale(1);
+    background: #fff;
+    color: rgb(233, 15, 197);
+}
+
+#vol {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 3px;
+    background: rgb(25, 4, 63);
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 40px 0;
+}
+
+#vol::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: rgb(25, 4, 63);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+}
+
+.vol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.vol div {
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: rgb(25, 4, 63);
+    box-shadow: 0 10px 20px rgba(255, 26, 26, 0.22);
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the color of the parent element */
+}
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    z-index: 999;
+    background-color:  rgb(25, 4, 63);;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    padding: 10px;
+    color:  rgb(230, 179, 12);
+}
+
+.sidebar li {
+    width: 100%;
+    cursor: pointer;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.sidebar.active {
+    display: block;
+    left: 0; 
+}
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(25, 4, 63);
+    padding: 10px;
+    border-bottom: 1px solid rgb(25, 4, 63);
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.sidebar-header .fa-x {
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(230, 179, 12);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.fa-share-nodes {
+    margin-right: 10px;
+}
+
+.Tracklist {
+    height: 100%;
+    width: 99%; /* Adjust width as needed */
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially hidden */
+    background:   rgb(25, 4, 63);
+    color: rgb(230, 179, 12);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Smooth slide-in transition */
+    padding: 20px;
+    z-index: 999; /* Ensures sidebar is on top */
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.Tracklist.active {
+    display: block;
+    left: 0; /* Slide in from the left */
+}
+
+.Tracklist .closebtn {
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.Tracklist p{
+    font-size: 20px;
+    text-align: center;
+    color:  rgb(230, 179, 12);
+    border-bottom: 2px solid rgb(230, 179, 12); /* Underlined border */
+    padding: 10px 0; /* Optional: add some spacing */
+    cursor: pointer;
+}
+
+.tracklist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(25, 4, 63);
+    padding: 10px;
+    border-bottom: 1px solid rgb(25, 4, 63);
+}
+
+.tracklist-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.tracklist-header .fa-x {
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(230, 179, 12);
+}
+
+@media only screen and (max-width: 320px){
+    nav {
+        display: flex;
+        justify-content: space-between; /* Space between items */
+        top:0;
+    }
+    .container{
+        height:1px;
+        width: 1px;
+    } 
+    .music-player{
+        height:1px;
+        width: 1px;
+    }
+    nav .circle{
+        width: 40px;
+        height: 40px;
+        justify-content: space-between;
+        box-shadow:0 0px 0px  rgb(230, 179, 12);
+        background:rgb(230, 179, 12);
+    }
+    nav .circle .fa-solid{
+        font-size: 1px;
+    }
+}
+@media only screen and (max-width: 375px){
+    
+}
+@media only screen and (max-width: 430px){
+
+}
+@media only screen and (max-width: 600px){
+
+}
+@media only screen and (max-width: 1260px){
+    nav {
+        display: flex;
+        justify-content: space-between; /* Space between items */
+        top:0;
+    }
+    .container{
+        height:2800px;
+        width: 1260px;
+    }   
+    .music-player{
+            height:2800px;
+            width: 1260px;
+        }
+        nav .circle{
+            width: 200px;
+            height: 200px;
+            justify-content: space-between;
+            box-shadow:0 0px 0px  rgb(230, 179, 12);
+            background:rgb(230, 179, 12);
+        }
+        nav .circle .fa-solid{
+            font-size: 100px;
+        }
+        .controls div {
+            width: 200px;
+            height: 200px;
+        }
+        .controls .fa-solid{
+            font-size: 100px
+        }
+        .song-img {
+            border-radius: 0;
+            width: 90%;
+            height: 30%;
+        }
+
+        #progress {
+            height: 18px;
+        }
+
+        #progress::-webkit-slider-thumb {
+            width: 90px;
+            height: 90px;
+            border: 24px solid #fff;
+        }
+
+        #vol {
+            width: 600px;
+            height: 18px;  
+        }
+        #vol::-webkit-slider-thumb {
+            width: 90px;
+            height: 90px;
+            border: 24px solid #fff;
+        }
+        .vol div {
+            width: 160px;
+            height:160px
+        }
+        .vol .fa-solid{
+            font-size: 80px;
+        }
+
+        .music-player p {
+            font-size: 72px;
+        }
+        .music-player h1 {
+            font-size: 100px;
+        }
+
+        .sidebar-header h2 {
+            margin: 0;
+            font-size: 72px;
+        }
+        .sidebar li {
+            font-size: 72px;
+            padding: 40px 20px;
+            border-bottom: 2px solid rgb(230, 179, 12); /* Underlined border */
+        }
+        ul{
+            padding: 0 10px;
+        }
+
+        .tracklist-header h2 {
+            font-size: 72px;
+        }
+        .tracklist-header .fa-x {
+            font-size:72px;
+        }
+        .Tracklist p{
+            font-size: 82px;
+            padding: 40px 20px;
+        }
+}

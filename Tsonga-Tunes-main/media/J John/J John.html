@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="x-icon" href="../icon.png">
+    <title>Xigaza Unified</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">">
+    <style>
+        body {
+            background-color: rgb(25, 4, 63);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="circle">
+                    <div><a href="../../Home.html"><i class="fa-solid fa-angle-left"></i></a></div>
+                </div>
+                <div class="circle">
+                    <ul class="sidebar">
+                        <li><i class="fa-solid fa-plus"></i>Add to playlist</li>
+                        <li><a href="About.html"><i class="fa-solid fa-user"></i> Artist</a></li>
+                        <li><i class="fa-solid fa-download"></i> Download</li>
+                        <li><i class="fa-regular fa-heart"></i> Like</li>
+                        <li><i class="fa-solid fa-ellipsis-vertical"></i> List</li>
+                        <li><i class="fa-regular fa-file-lines"></i> Lyrics</li>
+                        <li><i class="fa-solid fa-share-nodes"></i> Share</li>
+                    </ul>
+                    <div class="menu-icon" onclick="showSidebar()"><i class="fa-solid fa-bars"></i></div>
+                </div>
+            </nav>
+            <img src="Thumbnail.png" class="song-img">
+            <h1 id="songTitle">VIP</h1> <!-- Updated to use dynamic song title -->
+            <p>J John The Big Baby</p>
+            <audio autoplay id="song">
+                <source src="Mafela Ndleleni/VIP.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" value="0" id="progress">
+
+            <div class="vol">
+                <div onclick="mute()"><i class="fa-solid fa-volume-xmark" id="ctrlmute"></i></div>
+                <input type="range" value="50" min="0" max="100" id="vol">
+            </div>
+            
+            <div class="controls">
+                <div><i class="fa-solid fa-shuffle"></i></div>
+                <div onclick="previous()"><i class="fa-solid fa-backward"></i></div>
+                <div onclick="playPause()"><i class="fa-solid fa-pause" id="ctrlIcon"></i></div>
+                <div onclick="next()"><i class="fa-solid fa-forward"></i></div>
+                <div onclick="toggleRepeat()"><i class="fa-solid fa-repeat" id="repeatIcon"></i></div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/Controls.js"></script>
+    <script>
+        let songs = [
+            { src: "Mafela Ndleleni/VIP.mp3", name: "VIP" },
+            { src: "Mafela Ndleleni/Jomela.mp3", name: "Jomela" },
+            { src: "Mafela Ndleleni/Wow.mp3", name: "Wow" },
+            { src: "Mafela Ndleleni/Mbewulani.mp3", name: "Mbewulani" },
+            { src: "Mafela Ndleleni/Mafela Ndleleni.mp3", name: "Mafela Ndleleni" },
+            { src: "Mafela Ndleleni/Shikoro Koro.mp3", name: "Shikoro Koro" },
+            { src: "Mafela Ndleleni/Photo.mp3", name: "Photo" },
+            { src: "Mafela Ndleleni/Swa Mndzuku.mp3", name: "Swa Mndzuku" },
+            { src: "Mafela Ndleleni/Le Nkuweni.mp3", name: "Le Nkuweni" },
+            { src: "Mafela Ndleleni/Beacation.mp3", name: "Beacation" },
+            
+        ];
+    </script>    
+</body>
+</html>
