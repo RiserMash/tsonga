@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="x-icon" href="../icon.png">
+    <title>Xigaza Unified</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: rgb(25, 4, 63);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="circle">
+                    <div><a href="../../Home.html"><i class="fa-solid fa-angle-left"></i></a></div>
+                </div>
+                <div class="circle">
+                    <ul class="sidebar">
+                        <li><i class="fa-solid fa-plus"></i>Add to playlist</li>
+                        <li><a href="About.html"><i class="fa-solid fa-user"></i> Artist</a></li>
+                        <li><i class="fa-solid fa-download"></i> Download</li>
+                        <li><i class="fa-regular fa-heart"></i> Like</li>
+                        <li><i class="fa-solid fa-ellipsis-vertical"></i> List</li>
+                        <li><i class="fa-regular fa-file-lines"></i> Lyrics</li>
+                        <li><i class="fa-solid fa-share-nodes"></i> Share</li>
+                    </ul>
+                    <div class="menu-icon" onclick="showSidebar()"><i class="fa-solid fa-bars"></i></div>
+                </div>
+            </nav>
+            <img src="Thumbnail.png" class="song-img">
+            <h1 id="songTitle">Mhana Vafana</h1> <!-- Updated to use dynamic song title -->
+            <p>XamaCcombo</p>
+            <audio autoplay id="song">
+                <source src="Original Mhana Vafana/Mhana Vafana.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" value="0" id="progress">
+
+            <div class="vol">
+                <div onclick="mute()"><i class="fa-solid fa-volume-xmark" id="ctrlmute"></i></div>
+                <input type="range" value="50" min="0" max="100" id="vol">
+            </div>
+            
+            <div class="controls">
+                <div><i class="fa-solid fa-shuffle"></i></div>
+                <div onclick="previous()"><i class="fa-solid fa-backward"></i></div>
+                <div onclick="playPause()"><i class="fa-solid fa-pause" id="ctrlIcon"></i></div>
+                <div onclick="next()"><i class="fa-solid fa-forward"></i></div>
+                <div onclick="toggleRepeat()"><i class="fa-solid fa-repeat" id="repeatIcon"></i></div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/Controls.js"></script>
+    <script>
+        let songs = [
+            { src: "Original Mhana Vafana/Mhana Vafana.mp3", name: "Mhana Vafana" },
+            { src: "Original Mhana Vafana/Ta Humesa.mp3", name: "Ta Humesa" },
+            { src: "Original Mhana Vafana/Nwa Maringani.mp3", name: "Nwa Maringani" },
+            { src: "Original Mhana Vafana/Mhayivava.mp3", name: "Mhayivava" },
+            { src: "Original Mhana Vafana/Sheshageza Gijima.mp3", name: "Sheshageza Gijima" },
+            { src: "Original Mhana Vafana/Mhana Nwananga.mp3", name: "Mhana Nwananga" },
+            { src: "Original Mhana Vafana/Le Mvhumayileni.mp3", name: "Le Mvhumayileni" },
+            { src: "Original Mhana Vafana/Iwhawha Papa Fana.mp3", name: "Iwhawha Papa Fana" },
+            { src: "Original Mhana Vafana/Vantswelani.mp3", name: "Vantswelani" },
+            { src: "Original Mhana Vafana/Dzumba Na Mina.mp3", name: "Dzumba Na Mina" },
+            { src: "Original Mhana Vafana/Seku Fike Tingwenya.mp3", name: "Seku Fike Tingwenya" },
+            { src: "Original Mhana Vafana/Swelengende.mp3", name: "Swelengende" },
+            { src: "Original Mhana Vafana/Swilo Swa Dlaya.mp3", name: "Swilo Swa Dlaya" },
+            { src: "Original Mhana Vafana/Mhana Vafana Remix.mp3", name: "Mhana Vafana Remix" },
+        ];
+    </script>    
+</body>
+</html>
